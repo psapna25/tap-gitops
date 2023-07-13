@@ -1,0 +1,6 @@
+tap_install:
+  values:
+    # Tanzu Application Platform values go here.
+    shared:
+      ingress_domain: "sapna.eks.full.cloudfocused.in"
+    ceip_policy_disclosed: true
