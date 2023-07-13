@@ -1,0 +1,22 @@
+---
+secrets:
+  eso:
+    vault:
+      server: https://vault-cluster-public-vault-c2e545bd.ab6ec23f.z1.hashicorp.cloud:8200
+      namespace: "admin"
+      auth:
+        kubernetes:
+          mountPath: psapna-basic
+          role: psapna-basic--tanzu-sync-secrets
+    remote_refs:
+      sync_git:
+        basic_auth:
+          username:
+            key: secret/dev/psapna-basic/tanzu-sync/sync-git/basic_auth
+            property: username
+          password:
+            key: secret/dev/psapna-basic/tanzu-sync/sync-git/basic_auth
+            property: password
+      install_registry_dockerconfig:
+        dockerconfigjson:
+          key: secret/dev/psapna-basic/tanzu-sync/install-registry-dockerconfig
