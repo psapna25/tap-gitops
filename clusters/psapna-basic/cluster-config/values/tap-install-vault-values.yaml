@@ -1,0 +1,15 @@
+---
+tap_install:
+  secrets:
+    eso:
+      vault:
+        server: https://vault-cluster-public-vault-c2e545bd.ab6ec23f.z1.hashicorp.cloud:8200
+        namespace: "admin"
+        auth:
+          kubernetes:
+            mountPath: psapna-basic
+            role: psapna-basic--tap-install-secrets
+      remote_refs:
+        tap_sensitive_values:
+          sensitive_tap_values_yaml:
+            key: secret/dev/psapna-basic/tap/sensitive-values.yaml
